@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  hello:
+    image: httpd
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.5
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
