@@ -1,0 +1,13 @@
+on:
+  push:
+    branches:
+    - main
+    
+jobs:
+  test:
+    name: testing
+    runs-on: ubuntu-22.04
+    steps:
+      - name: execute docker
+        run: |
+          docker run hello-world
