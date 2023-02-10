@@ -10,4 +10,9 @@ jobs:
     steps:
       - name: execute docker
         run: |
-          docker run hello-world
+          docker-compose up
+          wget http://10.5.0.5
+        with:
+          name: index
+          path: index.html
+          retention-days: 5
