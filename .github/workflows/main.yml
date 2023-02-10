@@ -8,9 +8,12 @@ jobs:
     name: testing
     runs-on: ubuntu-22.04
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: execute docker
-      - run: docker-compose up
-      - run: wget http://10.5.0.5
+        run: |
+          docker-compose up
+          wget http://10.5.0.5
       - name: upload  
         uses: actions/upload-artifact@v3
         with:
