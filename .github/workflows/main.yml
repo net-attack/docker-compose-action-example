@@ -11,6 +11,8 @@ jobs:
       - name: execute docker
       - run: docker-compose up
       - run: wget http://10.5.0.5
+      - name: upload  
+        uses: actions/upload-artifact@v3
         with:
           name: index
           path: index.html
